@@ -16,3 +16,19 @@ For help getting started with Flutter, view our
 samples, guidance on mobile development, and a full API reference.
 "# Menue_App" 
 "# Menue_App" 
+<p align="left">
+  <img src="assets/img.png" alt="SR GUI Opening window"
+       width="300">
+</p>
+<p align="left">
+  <img src="assets/img_1.png" alt="SR GUI Opening window"
+       width="300">
+</p>
+<p align="left">
+  <img src="assets/img_2.png" alt="SR GUI Opening window"
+       width="300">
+</p>
+<p align="left">
+  <img src="assets/splash.png" alt="SR GUI Opening window"
+       width="300">
+</p>
