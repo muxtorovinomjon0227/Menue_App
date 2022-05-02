@@ -66,6 +66,9 @@ flutter:
     - assets/images/
     - assets/icons/
     - assets/translation/
+    - assets/drinksImages/
+    - assets/saladsImages/
+    - assets/fastFoodImage/
   fonts:
     - family: Manrope
       fonts:

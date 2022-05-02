@@ -1,10 +1,10 @@
 import 'dart:io';
 import 'dart:ui';
-
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:menue_app/models/food_models.dart';
 import 'package:menue_app/pages/BlyudaPage/food_more_page.dart';
+
 import 'details_page.dart';
 
 class BlyudaPage extends StatefulWidget {

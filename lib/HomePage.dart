@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:menue_app/models/lang.dart';
 import 'package:menue_app/pages/DrincPage/drinc_page.dart';
 import 'package:menue_app/pages/FastFoodPages/fast_food_page.dart';
@@ -14,14 +15,29 @@ class HomeWidget extends StatefulWidget {
 }
 
 class _HomeWidgetState extends State<HomeWidget> {
+
+
+  @override
+  void initState() {
+    super.initState();
+    initialization();
+  }
+
+  void initialization() async {
+    await Future.delayed(const Duration(seconds: 2));
+    FlutterNativeSplash.remove();
+  }
+
+
+
   int _selectedIndex = 0;
   bool showNavigationBar = false;
 
   var list = [
     BlyudaPage(),
-    DrincPage(),
+    DrinksPage(),
     FastFoodPage(),
-    NotificationPage(),
+    SaladsPage(),
   ];
 
   var title = [
@@ -74,7 +90,10 @@ class _HomeWidgetState extends State<HomeWidget> {
                           });
                         },
                         labelType: NavigationRailLabelType.all,
-                        leading: langInit(),
+                        leading: Padding(
+                          padding: const EdgeInsets.only(top: 100),
+                          child: langInit(),
+                        ),
                         destinations:  [
                            NavigationRailDestination(
                             icon: SizedBox(),
@@ -91,13 +110,13 @@ class _HomeWidgetState extends State<HomeWidget> {
                           NavigationRailDestination(
                             icon: SizedBox(),
                             label: RotatedBox(quarterTurns: -1,
-                              child: Text("salads".tr()),
+                              child: Text("fast_food".tr()),
                             ),
                           ),
                           NavigationRailDestination(
                             icon: SizedBox(),
                             label: RotatedBox(quarterTurns: -1,
-                              child: Text("fast_food".tr()),
+                              child: Text("salads".tr()),
                             ),
                           ),
                         ],

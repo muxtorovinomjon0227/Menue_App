@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "322486496198",
+    "project_id": "kongil-restaraunt",
+    "storage_bucket": "kongil-restaraunt.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:322486496198:android:2476c89b52e9d1384fe0c7",
+        "android_client_info": {
+          "package_name": "com.example.menue_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "322486496198-hmes555p24k9ghf9r82e66m13cqu9jj0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4_VN8b4V_D2cWvq5YLW0GVF_6NizYKNM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "322486496198-hmes555p24k9ghf9r82e66m13cqu9jj0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

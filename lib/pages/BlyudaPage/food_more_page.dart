@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:menue_app/models/food_models.dart';
 
 import 'blyuda_page.dart';
 
@@ -17,20 +18,20 @@ class _FoodMorePageState extends State<FoodMorePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: const BoxDecoration(
-        image: DecorationImage(
-          fit: BoxFit.cover,
-          image: AssetImage("assets/images/backgroundImage.png"),
+    return Scaffold(
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            fit: BoxFit.cover,
+            image: AssetImage("assets/images/backgroundImage.png"),
+          ),
         ),
-      ),
-      child: buildMore(
-        context,
+        child: buildMore(),
       ),
     );
   }
 
-  Widget buildMore(context) {
+  Widget buildMore() {
     return WillPopScope(
       onWillPop: () {
         _isMealSelected;
@@ -80,9 +81,9 @@ class _FoodMorePageState extends State<FoodMorePage> {
                   ),
                 ]),
                 Padding(
-                  padding: const EdgeInsets.only(left: 75, top: 50),
+                  padding: const EdgeInsets.only(left: 50, top: 50),
                   child: Container(
-                    width: 290,
+                    width:320,
                     height: double.infinity,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(2),
