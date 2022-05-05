@@ -7,6 +7,7 @@ class Salad {
   String? cost;
   int? bannerColor;
   String? ingredient;
+  String? fastFoodMore;
 
   Salad({
     this.id,
@@ -16,7 +17,8 @@ class Salad {
     this.time,
     this.cost,
     this.bannerColor,
-    this.ingredient
+    this.ingredient,
+    this.fastFoodMore
   });
   static List<Salad> salads = [
     Salad(
@@ -27,7 +29,19 @@ class Salad {
         time: "20 мин",
         cost: "35 000 минг",
         bannerColor: 0xffF2DFE1,
-        ingredient: "5 инг"
+        ingredient: "5 инг",
+        fastFoodMore: "Fast food refers to food "
+            "that can be prepared and served quickly."
+            " It can come from many places: sit-down "
+            "restaurants, counter service, take-out,"
+            " drive-thru, and delivery. Fast food is "
+            "popular because the food is inexpensive, "
+            "convenient, and tastes good. Fast food may "
+            "include refined grains instead of whole grains,"
+            " contain saturated fat, cholesterol,"
+            " and added sugar, and it can be high in sodium "
+            "(aka salt) which is used as a preservative and"
+            " makes food more flavorful and satisfying."
     ),
     Salad(
         id: 2,
@@ -37,7 +51,19 @@ class Salad {
         time: "20 мин",
         cost: "60 000 минг",
         bannerColor: 0xffDCC7B1,
-        ingredient: "6 инг"
+        ingredient: "6 инг",
+        fastFoodMore: "Fast food refers to food "
+            "that can be prepared and served quickly."
+            " It can come from many places: sit-down "
+            "restaurants, counter service, take-out,"
+            " drive-thru, and delivery. Fast food is "
+            "popular because the food is inexpensive, "
+            "convenient, and tastes good. Fast food may "
+            "include refined grains instead of whole grains,"
+            " contain saturated fat, cholesterol,"
+            " and added sugar, and it can be high in sodium "
+            "(aka salt) which is used as a preservative and"
+            " makes food more flavorful and satisfying."
     ),
     Salad(
         id: 3,
@@ -47,7 +73,19 @@ class Salad {
         time: "25 мин",
         cost: "20 000 минг",
         bannerColor: 0xffFFC5A8,
-        ingredient: "7 инг"
+        ingredient: "7 инг",
+        fastFoodMore: "Fast food refers to food "
+            "that can be prepared and served quickly."
+            " It can come from many places: sit-down "
+            "restaurants, counter service, take-out,"
+            " drive-thru, and delivery. Fast food is "
+            "popular because the food is inexpensive, "
+            "convenient, and tastes good. Fast food may "
+            "include refined grains instead of whole grains,"
+            " contain saturated fat, cholesterol,"
+            " and added sugar, and it can be high in sodium "
+            "(aka salt) which is used as a preservative and"
+            " makes food more flavorful and satisfying."
     ),
     Salad(
         id: 4,
@@ -57,7 +95,19 @@ class Salad {
         time: "15 мин",
         cost: "40 000 минг",
         bannerColor: 0xff71C3A1,
-        ingredient: "4 инг"
+        ingredient: "4 инг",
+        fastFoodMore: "Fast food refers to food "
+            "that can be prepared and served quickly."
+            " It can come from many places: sit-down "
+            "restaurants, counter service, take-out,"
+            " drive-thru, and delivery. Fast food is "
+            "popular because the food is inexpensive, "
+            "convenient, and tastes good. Fast food may "
+            "include refined grains instead of whole grains,"
+            " contain saturated fat, cholesterol,"
+            " and added sugar, and it can be high in sodium "
+            "(aka salt) which is used as a preservative and"
+            " makes food more flavorful and satisfying."
     ),
     Salad(
         id: 5,
@@ -67,7 +117,19 @@ class Salad {
         time: "10 мин",
         cost: "54 000 минг",
         bannerColor: 0xffA8B6FF,
-        ingredient: "8 инг"
+        ingredient: "8 инг",
+        fastFoodMore: "Fast food refers to food "
+            "that can be prepared and served quickly."
+            " It can come from many places: sit-down "
+            "restaurants, counter service, take-out,"
+            " drive-thru, and delivery. Fast food is "
+            "popular because the food is inexpensive, "
+            "convenient, and tastes good. Fast food may "
+            "include refined grains instead of whole grains,"
+            " contain saturated fat, cholesterol,"
+            " and added sugar, and it can be high in sodium "
+            "(aka salt) which is used as a preservative and"
+            " makes food more flavorful and satisfying."
     ),
     Salad(
         id: 6,
@@ -77,7 +139,19 @@ class Salad {
         time: "25 мин",
         cost: "20 000 минг",
         bannerColor: 0xffFFE7A8,
-        ingredient: "2 инг"
+        ingredient: "2 инг",
+        fastFoodMore: "Fast food refers to food "
+            "that can be prepared and served quickly."
+            " It can come from many places: sit-down "
+            "restaurants, counter service, take-out,"
+            " drive-thru, and delivery. Fast food is "
+            "popular because the food is inexpensive, "
+            "convenient, and tastes good. Fast food may "
+            "include refined grains instead of whole grains,"
+            " contain saturated fat, cholesterol,"
+            " and added sugar, and it can be high in sodium "
+            "(aka salt) which is used as a preservative and"
+            " makes food more flavorful and satisfying."
     ),
     Salad(
         id: 1,
@@ -87,7 +161,19 @@ class Salad {
         time: "20 мин",
         cost: "60 000 минг",
         bannerColor: 0xffCEA8FF,
-        ingredient: "5 инг"
+        ingredient: "5 инг",
+        fastFoodMore: "Fast food refers to food "
+            "that can be prepared and served quickly."
+            " It can come from many places: sit-down "
+            "restaurants, counter service, take-out,"
+            " drive-thru, and delivery. Fast food is "
+            "popular because the food is inexpensive, "
+            "convenient, and tastes good. Fast food may "
+            "include refined grains instead of whole grains,"
+            " contain saturated fat, cholesterol,"
+            " and added sugar, and it can be high in sodium "
+            "(aka salt) which is used as a preservative and"
+            " makes food more flavorful and satisfying."
     ),
     Salad(
         id: 1,
@@ -97,7 +183,19 @@ class Salad {
         time: "20 мин",
         cost: "44 000 минг",
         bannerColor: 0xffA8FFB1,
-        ingredient: "5 инг"
+        ingredient: "5 инг",
+        fastFoodMore: "Fast food refers to food "
+            "that can be prepared and served quickly."
+            " It can come from many places: sit-down "
+            "restaurants, counter service, take-out,"
+            " drive-thru, and delivery. Fast food is "
+            "popular because the food is inexpensive, "
+            "convenient, and tastes good. Fast food may "
+            "include refined grains instead of whole grains,"
+            " contain saturated fat, cholesterol,"
+            " and added sugar, and it can be high in sodium "
+            "(aka salt) which is used as a preservative and"
+            " makes food more flavorful and satisfying."
     ),
     Salad(
         id: 1,
@@ -107,7 +205,19 @@ class Salad {
         time: "20 мин",
         cost: "46 000 минг",
         bannerColor: 0xffFFA8A8,
-        ingredient: "5 инг"
+        ingredient: "5 инг",
+        fastFoodMore: "Fast food refers to food "
+            "that can be prepared and served quickly."
+            " It can come from many places: sit-down "
+            "restaurants, counter service, take-out,"
+            " drive-thru, and delivery. Fast food is "
+            "popular because the food is inexpensive, "
+            "convenient, and tastes good. Fast food may "
+            "include refined grains instead of whole grains,"
+            " contain saturated fat, cholesterol,"
+            " and added sugar, and it can be high in sodium "
+            "(aka salt) which is used as a preservative and"
+            " makes food more flavorful and satisfying."
     ),
 
   ];

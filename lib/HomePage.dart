@@ -24,7 +24,7 @@ class _HomeWidgetState extends State<HomeWidget> {
   }
 
   void initialization() async {
-    await Future.delayed(const Duration(seconds: 2));
+    await Future.delayed(const Duration(seconds: 1));
     FlutterNativeSplash.remove();
   }
 

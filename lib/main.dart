@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'HomePage.dart';
 import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 
 void main() async {

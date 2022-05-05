@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:menue_app/models/fast_food_model.dart';
 
-import '../../models/food_models.dart';
 
-
-class FoodMorePage extends StatelessWidget {
+class FastFoodMorePage extends StatelessWidget {
   final int selectedItemIndex;
   int count = 0;
-  FoodMorePage(this.selectedItemIndex, {Key? key}) : super(key: key);
+  FastFoodMorePage(this.selectedItemIndex, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -27,25 +26,33 @@ class FoodMorePage extends StatelessWidget {
   Widget myBody() {
     return Container(
       margin: const EdgeInsets.only(top: 80, right: 40,left: 55),
-      color: Color(Food.foods[selectedItemIndex].bannerColor!.toInt()),
+      color: Color(FastFood.fastFoods[selectedItemIndex].bannerColor!.toInt()),
       child: Stack(
         clipBehavior: Clip.none,
         alignment: Alignment.center,
         children: [
-          details(Food.foods[selectedItemIndex]),
+          details(FastFood.fastFoods[selectedItemIndex]),
+
           Positioned(
-              top: -72,
-              right: -48,
-              child: Image.asset(
-                Food.foods[selectedItemIndex].imageUrl!,
-                height: 220,
-              ))
+            top: -50,
+            right: -10,
+            child: CircleAvatar(radius: (100),
+                backgroundColor: Colors.white,
+                child: ClipRRect(
+                  borderRadius:BorderRadius.circular(100),
+                  child: Image.asset(
+                    FastFood.fastFoods[selectedItemIndex].imageUrl!,
+                    height: 300,
+                  ),
+                )
+            ),
+          ),
         ],
       ),
     );
   }
 
-  Widget details(Food foods) {
+  Widget details(FastFood fastFood) {
     return Padding(
       padding: const EdgeInsets.only(left: 12, right: 12),
       child: Column(
@@ -53,8 +60,8 @@ class FoodMorePage extends StatelessWidget {
         children: [
           const SizedBox(height: 140),
           Text(
-            foods.name!,
-            style: TextStyle(
+            fastFood.name!,
+            style: const TextStyle(
               fontSize: 26,
               fontWeight: FontWeight.w700,
             ),
@@ -72,7 +79,7 @@ class FoodMorePage extends StatelessWidget {
                   ),
                   const SizedBox(width: 4),
                   Text(
-                    foods.time.toString(),
+                    fastFood.time.toString(),
                     style: const TextStyle(
                         color: Color(0xff52616B), fontWeight: FontWeight.w600),
                   ),
@@ -87,8 +94,8 @@ class FoodMorePage extends StatelessWidget {
                   ),
                   const SizedBox(width: 4),
                   Text(
-                    foods.ingredient.toString(),
-                    style: TextStyle(
+                    fastFood.ingredient.toString(),
+                    style: const TextStyle(
                         color: Color(0xff52616B), fontWeight: FontWeight.w600),
                   ),
                 ],
@@ -101,7 +108,7 @@ class FoodMorePage extends StatelessWidget {
                     width: 20,
                   ),
                   const SizedBox(width: 4),
-                  Text(
+                  const Text(
                     '438 кал',
                     style: TextStyle(
                         color: Color(0xff52616B), fontWeight: FontWeight.w600),
@@ -113,7 +120,7 @@ class FoodMorePage extends StatelessWidget {
           const SizedBox(height: 16),
           Expanded(
             child: Text(
-              Food.foods[0].fastFoodMore!,
+              FastFood.fastFoods[0].fastFoodMore!,
               style: const TextStyle(fontSize: 16, height: 1.4),
               textAlign: TextAlign.left,
             ),

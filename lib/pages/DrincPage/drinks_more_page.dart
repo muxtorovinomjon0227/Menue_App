@@ -1,153 +1,121 @@
 import 'package:flutter/material.dart';
 
-import 'drinc_page.dart';
+import '../../models/drinks_model.dart';
+import '../../models/food_models.dart';
 
-class DrinksMorePage extends StatefulWidget {
-  @override
-  State<DrinksMorePage> createState() => _DrinksMorePageState();
-}
 
-class _DrinksMorePageState extends State<DrinksMorePage> {
-  bool _isDrinkSelected = false;
+class DrinksMorePage extends StatelessWidget {
+  final int selectedItemIndex;
+  int count = 0;
+  DrinksMorePage(this.selectedItemIndex, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: double.infinity,
       decoration: const BoxDecoration(
         image: DecorationImage(
           fit: BoxFit.cover,
-          image: AssetImage("assets/images/backgroundImage.png"),
+          image: AssetImage('assets/icons/ic_add.png'),
         ),
       ),
-      child: buildMore(
-        context,
+      child: myBody(),
+    );
+  }
+
+  Widget myBody() {
+    return Container(
+      margin: const EdgeInsets.only(top: 80, right: 30),
+      color: Colors.white,
+      child: Stack(
+        clipBehavior: Clip.none,
+        alignment: Alignment.center,
+        children: [
+          details(Drink.drinks[selectedItemIndex]),
+          Positioned(
+              top: -72,
+              right: -48,
+              child: Image.asset(
+                Drink.drinks[selectedItemIndex].imageUrl!,
+                height: 220,
+              ))
+        ],
       ),
     );
   }
 
-  Widget buildMore(context) {
-    var drink;
-    return WillPopScope(
-      onWillPop: () {
-        _isDrinkSelected;
-        return Future.value(false);
-      },
-      child: SafeArea(
-        child: _isDrinkSelected
-            ? DrinksPage()
-            : Stack(children: [
-                Row(children: [
-                  Padding(
-                    padding: EdgeInsets.only(left: 100, right: 50),
-                    child: Row(
-                      children: [
-                        Container(
-                            height: 40,
-                            width: 40,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(25),
-                                color: Colors.white),
-                            child: IconButton(
-                              onPressed: () {
-                                setState(() {
-                                  _isDrinkSelected = true;
-                                });
-                              },
-                              icon: const Icon(
-                                Icons.arrow_back,
-                                size: 24,
-                                color: Colors.black,
-                              ),
-                            )),
-                        SizedBox(width: 15),
-                        Container(
-                            height: 40,
-                            width: 40,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(25),
-                                color: Colors.white),
-                            child: IconButton(
-                              icon: Image.asset("assets/icons/ic_exit.png",
-                                  color: Colors.black, height: 20, width: 20),
-                              onPressed: () {},
-                            )),
-                      ],
-                    ),
+  Widget details(Drink drinks) {
+    return Padding(
+      padding: const EdgeInsets.only(left: 12, right: 12),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const SizedBox(height: 140),
+          Text(
+            drinks.name!,
+            style: TextStyle(
+              fontSize: 26,
+              fontWeight: FontWeight.w700,
+            ),
+          ),
+          const SizedBox(height: 16),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
+                children: [
+                  Image.asset(
+                    'assets/icons/ic_add.png',
+                    height: 20,
+                    width: 20,
                   ),
-                ]),
-                Padding(
-                  padding: const EdgeInsets.only(left: 50, top: 50),
-                  child: Container(
-                    width: 320,
-                    height: double.infinity,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(2),
-                      color: Color(0xffF2DFE1),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Stack(
-                        children: [
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.only(top: 120),
-                                child: Row(
-                                  children: [
-                                    Container(
-                                      width: 2,
-                                      height: 15,
-                                      color: Colors.blue,
-                                    ),
-                                    SizedBox(width: 5),
-                                    const Text("Uzbekiston choyxonasi",
-                                        style: TextStyle(
-                                            color: Colors.blue, fontSize: 13)),
-                                  ],
-                                ),
-                              ),
-                              SizedBox(height: 10),
-                              const Text(
-                                "Uzbekistonda ishlab chiqarilagan sof ichimliklar",
-                                style: TextStyle(
-                                    fontSize: 25, fontWeight: FontWeight.bold),
-                              ),
-                              const SizedBox(height: 20),
-                              const Text(
-                                 " Diabet bilan og‘riganlar uchun shakar "
-                                     "o‘rinini bosuvchi. Kimyoviy barqaror"
-                                     " emas: harorat oshishi bilan metanol va"
-                                     " fenilalaninga ajraydi. Metanol (metil spirti)"
-                                     " o‘ta xavfli: 5-10 ml ko‘rish qobiliyatini "
-                                     "ishdan chiqarib, ko‘rlikka olib keladi. "
-                                     "30 ml o‘limga olib keladi. Issiq ichimlikda "
-                                     "aspartam kuchli kanserogen formaldegidga aylanadi."
-                                     " Aspartamdan zaharlanish ilmiy tasdiqlangan."
-                                     " Zaharlanganda sezgi hissi yo‘qoladi, bosh "
-                                     "og‘rig‘i va aylanishi, charchash, qusish, "
-                                     "yurakning tez urishi, jizzakilik va boshqa "
-                                     "holatlar, Parkinson hamda Alsgeymer kasalliklari"
-                                     "  kelib chiqishi mumkin."
-                 ,                 strutStyle: StrutStyle(height: 1.5)),
-                            ],
-                          )
-                        ],
-                      ),
-                    ),
+                  const SizedBox(width: 4),
+                  Text(
+                    '20 мин',
+                    style: const TextStyle(
+                        color: Color(0xff52616B), fontWeight: FontWeight.w600),
                   ),
-                ),
-                const Padding(
-                  padding: EdgeInsets.only(left: 220, top: 0),
-                  child: CircleAvatar(
-                    radius: 85,
-                    backgroundColor: Color(0xffFDCF09),
-                    child: CircleAvatar(
-                        radius: 80,
-                        backgroundImage: AssetImage("assets/drinksImages/coffee.png")),
+                ],
+              ),
+              Row(
+                children: [
+                  Image.asset(
+                    'assets/icons/ic_add.png',
+                    height: 20,
+                    width: 20,
                   ),
-                ),
-              ]),
+                  const SizedBox(width: 4),
+                  Text(
+                    '5 инг',
+                    style: TextStyle(
+                        color: Color(0xff52616B), fontWeight: FontWeight.w600),
+                  ),
+                ],
+              ),
+              Row(
+                children: [
+                  Image.asset(
+                    'assets/icons/ic_add.png',
+                    height: 20,
+                    width: 20,
+                  ),
+                  const SizedBox(width: 4),
+                  Text(
+                    '438 кал',
+                    style: TextStyle(
+                        color: Color(0xff52616B), fontWeight: FontWeight.w600),
+                  ),
+                ],
+              ),
+            ],
+          ),
+          const SizedBox(height: 16),
+          Text(
+            Drink.drinks[0].name!,
+            style: const TextStyle(fontSize: 16, height: 1.4),
+            textAlign: TextAlign.left,
+          )
+        ],
       ),
     );
   }

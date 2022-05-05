@@ -1,152 +1,185 @@
 import 'dart:io';
 import 'dart:ui';
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:menue_app/models/drinks_model.dart';
-import 'package:menue_app/pages/DrincPage/drinks_more_page.dart';
+
+import '../../models/drinks_model.dart';
+import 'drinks_more_page.dart';
 
 class DrinksPage extends StatefulWidget {
+  DrinksPage({Key? key}) : super(key: key);
+
   @override
-  State<DrinksPage> createState() => _BlyudaPageState();
+  State<DrinksPage> createState() => _DrinksPageState();
 }
 
-class _BlyudaPageState extends State<DrinksPage> {
-  bool _isMealSelected = false;
+class _DrinksPageState extends State<DrinksPage> {
+  bool _isItemSelected = false;
+  int _selectedItemIndex = 0;
 
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () {
-        _isMealSelected
+        //trigger leaving and use own data
+        // Navigator.pop(context, false);
+        _isItemSelected
             ? setState(() {
-                _isMealSelected = false;
-              })
-            : exit(1);
+          _isItemSelected = false;
+        })
+            : exit(0);
+
+        //we need to return a future
         return Future.value(false);
       },
       child: SafeArea(
-        child: _isMealSelected
-            ? DrinksMorePage()
+        child: _isItemSelected
+            ? DrinksMorePage(_selectedItemIndex)
             : Scaffold(
-                body: Column(children: [
-                  Expanded(
-                    child: GridView.builder(
-                      scrollDirection: Axis.vertical,
-                      itemCount: 7,
-                      gridDelegate:
-                          const SliverGridDelegateWithFixedCrossAxisCount(
-                              crossAxisCount: 1,
-                              mainAxisExtent: 360,
-                              crossAxisSpacing: 10,
-                              mainAxisSpacing: 10),
-                      itemBuilder: (BuildContext context, int index) {
-                        return drink(Drink.drinks[index]);
-                      },
+            body: Padding(
+              padding: const EdgeInsets.fromLTRB(12, 0, 12, 0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+               const   Center(
+                    child: Text(
+                      'Мы очень рады что  вы выбрали\nНаше ресторан, спасибо за визит!',
+                      style: TextStyle(fontSize: 16,color: Colors.blue),
                     ),
                   ),
-                ]),
+                  Expanded(
+                    child: GridView.builder(
+                        scrollDirection: Axis.vertical,
+                        itemCount: Drink.drinks.length,
+                        gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 1,
+                            mainAxisExtent: 350,
+                            crossAxisSpacing: 10,
+                            mainAxisSpacing: 32),
+                        itemBuilder: (BuildContext context, int index) {
+                          return meal(Drink.drinks[index], context, index);
+                        }),
+                  )
+                ],
               ),
+            )),
       ),
-    ); //Container
+    );
   }
 
-  Widget drink(Drink drink) {
-    return Padding(
-      padding: EdgeInsets.only(right: 50),
-      child: Expanded(
-        child: Stack(
-          clipBehavior: Clip.none,
-          alignment: Alignment.topRight,
-          children: [
-            Card(
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20)),
-              elevation: 40,
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: Color(drink.bannerColor!),
-                ),
-                width: 230,
-                height: 320,
-                child: Padding(
-                  padding: const EdgeInsets.all(15.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      SizedBox(height: 40),
-                      Row(
+  Widget meal(Drink drinks, context, index) {
+    return Stack(
+      clipBehavior: Clip.none,
+      alignment: Alignment.center,
+      children: [
+        Card(
+          elevation: 48,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20.0),
+          ),
+          child: Container(
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20.0),
+                  color: Color(drinks.bannerColor!)),
+              height: 360,
+              width: 230,
+              child: Padding(
+                padding: EdgeInsets.all(20),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(height: 48),
+                    Row(
+                      children: [
+                        Container(
+                          width: 2,
+                          height: 25,
+                          color: const Color(0xff00195C),
+                        ),
+                        SizedBox(width: 4),
+                        Text(drinks.name.toString()),
+                      ],
+                    ),
+                    const SizedBox(height: 16),
+                    SizedBox(
+                      height: 90,
+                      child: Text(
+                        drinks.name!,
+                        maxLines: 3,
+                        style: const TextStyle(
+                            height: 1.3,
+                            fontSize: 24,
+                            color: Color(0xff1E2022),
+                            fontWeight: FontWeight.w700),
+                      ),
+                    ),
+                    SizedBox(height: 16),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const Text(
+                          'Стоимость:',
+                          style: TextStyle(
+                              color: Color(0xff52616B),
+                              fontWeight: FontWeight.w600),
+                        ),
+                        Text(
+                          drinks.cost!,
+                          style: TextStyle(
+                              color: Color(0xff52616B),
+                              fontWeight: FontWeight.w600),
+                        ),
+                      ],
+                    ),
+                    Expanded(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
+                          Image.asset(
+                            'assets/icons/ic_add.png',
+                            height: 50,
+                            width: 50,
+                          ),
                           Container(
-                            height: 25,
-                            width: 2,
-                            color: Colors.black,
-                          ),
-                          SizedBox(width: 4),
-                          Text(drink.countName!),
-                        ],
-                      ),
-                      SizedBox(height: 10),
-                      Text(drink.name!,
-                          style: const TextStyle(
-                              fontSize: 24,
-                              color: Color(0xff1E2022),
-                              fontWeight: FontWeight.w700)),
-                      SizedBox(height: 30),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'cost'.tr(),
-                            style: TextStyle(
-                                color: Color(0xff52616B),
-                                fontWeight: FontWeight.bold),
-                          ),
-                          Text(drink.cost!,
-                              style: const TextStyle(
-                                  color: Color(0xff52616B),
-                                  fontWeight: FontWeight.bold)),
-                        ],
-                      ),
-                      SizedBox(height: 40),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          IconButton(
-                            onPressed: () {},
-                            iconSize: 35,
-                            icon: Image.asset("assets/icons/ic_add.png"),
-                          ),
-                          ElevatedButton(
-                            onPressed: () {
-                              setState(() {
-                                _isMealSelected = true;
-                              });
-                            },
-                            child: Text("Подробнее"),
+                            height: 50,
+                            child: ElevatedButton(
+                              style: ButtonStyle(
+                                  shape: MaterialStateProperty.all<
+                                      RoundedRectangleBorder>(
+                                      RoundedRectangleBorder(
+                                          borderRadius:
+                                          BorderRadius.circular(10.0),
+                                          side: const BorderSide(
+                                              color: Color(0xff175B8F)))),
+                                  backgroundColor:
+                                  MaterialStateProperty.all<Color>(
+                                      Color(0xff175B8F))),
+                              onPressed: () {
+                                setState(() {
+                                  _isItemSelected = true;
+                                  _selectedItemIndex = index;
+                                });
+                              },
+                              child: Text('Подробнее'),
+                            ),
                           )
                         ],
                       ),
-                    ],
-                  ),
+                    )
+                  ],
                 ),
-              ),
-            ),
-            Positioned(
-              right: -20,
-              bottom: 250,
-              child: CircleAvatar(
-                radius: 65,
-                backgroundColor: Color(0xffFDCF09),
-                child: CircleAvatar(
-                  radius: 60,
-                  backgroundImage: AssetImage(drink.imageUrl!)),
-                ),
-              )
-          ],
+              )),
         ),
-      ),
+        Positioned(
+            top: -24,
+            right: -8,
+            child: Image.asset(
+              drinks.imageUrl!,
+              height: 170,
+              width: 170,
+            ))
+      ],
     );
   }
 }
