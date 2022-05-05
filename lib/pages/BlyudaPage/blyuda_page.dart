@@ -119,15 +119,15 @@ class _BlyudaPageState extends State<BlyudaPage> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const Text(
-                          'Стоимость:',
-                          style: TextStyle(
+                         Text(
+                          'cost'.tr(),
+                          style: const TextStyle(
                               color: Color(0xff52616B),
                               fontWeight: FontWeight.w600),
                         ),
                         Text(
                           foods.cost!,
-                          style: TextStyle(
+                          style: const TextStyle(
                               color: Color(0xff52616B),
                               fontWeight: FontWeight.w600),
                         ),
@@ -201,7 +201,7 @@ class _BlyudaPageState extends State<BlyudaPage> {
                                   _selectedItemIndex = index;
                                 });
                               },
-                              child: Text('Подробнее'),
+                              child: Text("more".tr()),
                             ),
                           )
                         ],

@@ -120,16 +120,16 @@ class _SaladsPageState extends State<SaladsPage> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const Text(
-                          'Стоимость:',
-                          style: TextStyle(
+                         Text(
+                          'cost'.tr(),
+                          style: const TextStyle(
                               color: Color(0xff52616B),
                               fontWeight: FontWeight.w600),
                         ),
                         Text(
 
                             salads.cost!,
-                          style: TextStyle(
+                          style: const TextStyle(
                               color: Color(0xff52616B),
                               fontWeight: FontWeight.w600),
                         ),
@@ -165,7 +165,7 @@ class _SaladsPageState extends State<SaladsPage> {
                             const SizedBox(width: 4),
                             Text(
                               salads.ingredient.toString(),
-                              style: TextStyle(
+                              style: const TextStyle(
                                   color: Color(0xff52616B),
                                   fontWeight: FontWeight.w600),
                             ),
@@ -203,7 +203,7 @@ class _SaladsPageState extends State<SaladsPage> {
                                   _selectedItemIndex = index;
                                 });
                               },
-                              child: Text('Подробнее'),
+                              child: Text('more'.tr()),
                             ),
                           )
                         ],

@@ -14,19 +14,20 @@ class _CallPageState extends State<CallPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body:Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: [Colors.teal,Colors.deepOrangeAccent,Colors.greenAccent,Colors.amberAccent,Colors.purpleAccent,Colors.lightGreen]
-          ),
+          decoration:  BoxDecoration(
+              image:  DecorationImage(
+                image: AssetImage("assets/images/call_senter.png"),
+                fit: BoxFit.contain,
+              )
+
+      ,
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.start,
           children:  [
             SizedBox(height: 100),
-            Padding(
+            const Padding(
               padding: EdgeInsets.only(left: 50),
               child: Text("Assalomu alaykum! \n"
                   "Bizning restuarantimizga \n"
@@ -34,11 +35,9 @@ class _CallPageState extends State<CallPage> {
                   "pastdagi nomerga qo'ng'iroq \n"
                   "qib siz o'zingizga yoqqan taomni \n"
                   "buyirtma qlishingiz mumkin\n"
-                  ""
-                  ""
                   "Biznig xizmatlarni\n"
                   "maqqullaganingiz uchun"
-                  "sizdan judaham minnadormiz!",style: TextStyle(fontSize: 20,color: Colors.white)),
+                  "sizdan judaham minnadormiz!",style: TextStyle(fontSize: 20,color: Colors.black)),
             ),
             SizedBox(height: 50),
             Text("+998990665408",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.blue),),
@@ -57,3 +56,8 @@ class _CallPageState extends State<CallPage> {
     }, child: Text("Call"),);
   }
 }
+// gradient: LinearGradient(
+//     begin: Alignment.topLeft,
+//     end: Alignment.bottomRight,
+//     colors: [Colors.teal,Colors.deepOrangeAccent,Colors.greenAccent,Colors.amberAccent,Colors.purpleAccent,Colors.lightGreen]
+// )

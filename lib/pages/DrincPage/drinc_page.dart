@@ -2,11 +2,7 @@ import 'dart:io';
 import 'dart:ui';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:menue_app/models/salads_model.dart';
-import 'package:menue_app/pages/SalatPage/salads_more_page.dart';
-
 import '../../models/drinks_model.dart';
-import '../../models/food_models.dart';
 import 'drinks_more_page.dart';
 
 class DrinkPage extends StatefulWidget {
@@ -122,16 +118,16 @@ class _DrinkPageState extends State<DrinkPage> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const Text(
-                          'Стоимость:',
-                          style: TextStyle(
+                         Text(
+                          'cost'.tr(),
+                          style: const TextStyle(
                               color: Color(0xff52616B),
                               fontWeight: FontWeight.w600),
                         ),
                         Text(
 
                           drinks.cost!,
-                          style: TextStyle(
+                          style: const TextStyle(
                               color: Color(0xff52616B),
                               fontWeight: FontWeight.w600),
                         ),
@@ -173,7 +169,7 @@ class _DrinkPageState extends State<DrinkPage> {
                                   _selectedItemIndex = index;
                                 });
                               },
-                              child: Text('Подробнее'),
+                              child: Text("more".tr()),
                             ),
                           )
                         ],

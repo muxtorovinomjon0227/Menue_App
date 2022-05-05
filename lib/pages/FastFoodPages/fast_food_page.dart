@@ -118,16 +118,16 @@ class _FastFoodPageState extends State<FastFoodPage> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const Text(
-                          'Стоимость:',
-                          style: TextStyle(
+                         Text(
+                          'cost'.tr(),
+                          style: const TextStyle(
                               color: Color(0xff52616B),
                               fontWeight: FontWeight.w600),
                         ),
                         Text(
 
                           fastFood.cost!,
-                          style: TextStyle(
+                          style: const TextStyle(
                               color: Color(0xff52616B),
                               fontWeight: FontWeight.w600),
                         ),
@@ -201,7 +201,7 @@ class _FastFoodPageState extends State<FastFoodPage> {
                                   _selectedItemIndex = index;
                                 });
                               },
-                              child: Text('Подробнее'),
+                              child: Text('more'.tr()),
                             ),
                           )
                         ],
