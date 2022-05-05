@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'dart:ui';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:menue_app/pages/FastFoodPages/fast_food_more_page.dart';
 import '../../models/fast_food_model.dart';
@@ -42,7 +43,7 @@ class _FastFoodPageState extends State<FastFoodPage> {
                 children: [
                   Center(
                     child: Text(
-                      'Мы очень рады что  вы выбрали\nНаше ресторан, спасибо за визит!',
+                      'title'.tr(),
                       style: TextStyle(fontSize: 16,color: Colors.blue),
                     ),
                   ),

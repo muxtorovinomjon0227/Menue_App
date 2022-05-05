@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'dart:ui';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-
 import '../../models/drinks_model.dart';
 import 'drinks_more_page.dart';
 
@@ -41,9 +41,9 @@ class _DrinksPageState extends State<DrinksPage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-               const   Center(
+                  Center(
                     child: Text(
-                      'Мы очень рады что  вы выбрали\nНаше ресторан, спасибо за визит!',
+                      'title'.tr(),
                       style: TextStyle(fontSize: 16,color: Colors.blue),
                     ),
                   ),
@@ -89,7 +89,7 @@ class _DrinksPageState extends State<DrinksPage> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SizedBox(height: 48),
+                    SizedBox(height: 120),
                     Row(
                       children: [
                         Container(
@@ -101,20 +101,10 @@ class _DrinksPageState extends State<DrinksPage> {
                         Text(drinks.name.toString()),
                       ],
                     ),
-                    const SizedBox(height: 16),
-                    SizedBox(
-                      height: 90,
-                      child: Text(
-                        drinks.name!,
-                        maxLines: 3,
-                        style: const TextStyle(
-                            height: 1.3,
-                            fontSize: 24,
-                            color: Color(0xff1E2022),
-                            fontWeight: FontWeight.w700),
-                      ),
-                    ),
+                    const SizedBox(height: 1),
                     SizedBox(height: 16),
+                    Text(drinks.countName.toString(),style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold)),
+                    SizedBox(height: 12),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -125,6 +115,7 @@ class _DrinksPageState extends State<DrinksPage> {
                               fontWeight: FontWeight.w600),
                         ),
                         Text(
+
                           drinks.cost!,
                           style: TextStyle(
                               color: Color(0xff52616B),
@@ -132,6 +123,7 @@ class _DrinksPageState extends State<DrinksPage> {
                         ),
                       ],
                     ),
+                    SizedBox(height: 16),
                     Expanded(
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -171,14 +163,21 @@ class _DrinksPageState extends State<DrinksPage> {
                 ),
               )),
         ),
-        Positioned(
-            top: -24,
-            right: -8,
-            child: Image.asset(
-              drinks.imageUrl!,
-              height: 170,
-              width: 170,
-            ))
+        Column(
+          children: [
+            Positioned(
+              top: -15,
+              right:  15,
+              child: CircleAvatar(radius: (70),
+                  backgroundColor: Colors.white,
+                  child: ClipRRect(
+                    borderRadius:BorderRadius.circular(50),
+                    child: Image.asset(drinks.imageUrl.toString()),
+                  )
+              ),
+            ),
+          ],
+        ),
       ],
     );
   }

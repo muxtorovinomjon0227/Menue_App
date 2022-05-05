@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'dart:ui';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../../models/food_models.dart';
@@ -43,7 +44,7 @@ class _BlyudaPageState extends State<BlyudaPage> {
                 children: [
                   Center(
                     child: Text(
-                      'Мы очень рады что  вы выбрали\nНаше ресторан, спасибо за визит!',
+                      'title'.tr(),
                       style: TextStyle(fontSize: 16,color: Colors.blue),
                     ),
                   ),

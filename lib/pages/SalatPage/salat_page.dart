@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'dart:ui';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:menue_app/models/salads_model.dart';
 import 'package:menue_app/pages/SalatPage/salads_more_page.dart';
@@ -44,7 +45,7 @@ class _SaladsPageState extends State<SaladsPage> {
                 children: [
                   Center(
                     child: Text(
-                      'Мы очень рады что  вы выбрали\nНаше ресторан, спасибо за визит!',
+                      'title'. tr(),
                       style: TextStyle(fontSize: 16,color: Colors.blue),
                     ),
                   ),

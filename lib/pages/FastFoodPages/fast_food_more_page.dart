@@ -25,7 +25,7 @@ class FastFoodMorePage extends StatelessWidget {
 
   Widget myBody() {
     return Container(
-      margin: const EdgeInsets.only(top: 80, right: 40,left: 55),
+      margin: const EdgeInsets.only(top: 80, right: 40,left: 50),
       color: Color(FastFood.fastFoods[selectedItemIndex].bannerColor!.toInt()),
       child: Stack(
         clipBehavior: Clip.none,

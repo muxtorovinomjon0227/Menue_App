@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:menue_app/models/salads_model.dart';
 
 import '../../models/drinks_model.dart';
 import '../../models/food_models.dart';
@@ -12,14 +13,30 @@ class DrinksMorePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: double.infinity,
-      decoration: const BoxDecoration(
-        image: DecorationImage(
-          fit: BoxFit.cover,
-          image: AssetImage('assets/icons/ic_add.png'),
-        ),
+      margin: const EdgeInsets.only(top: 80, right: 35,left: 50),
+      color: Color(Drink.drinks[selectedItemIndex].bannerColor!.toInt()),
+      child: Stack(
+        clipBehavior: Clip.none,
+        alignment: Alignment.center,
+        children: [
+          details(Drink.drinks[selectedItemIndex]),
+
+          Positioned(
+            top: -50,
+            right: -10,
+            child: CircleAvatar(radius: (100),
+                backgroundColor: Colors.white,
+                child: ClipRRect(
+                  borderRadius:BorderRadius.circular(100),
+                  child: Image.asset(
+                    Drink.drinks[selectedItemIndex].imageUrl!,
+                    height: 300,
+                  ),
+                )
+            ),
+          ),
+        ],
       ),
-      child: myBody(),
     );
   }
 
@@ -36,7 +53,7 @@ class DrinksMorePage extends StatelessWidget {
               top: -72,
               right: -48,
               child: Image.asset(
-                Drink.drinks[selectedItemIndex].imageUrl!,
+                Salad.salads[selectedItemIndex].imageUrl!,
                 height: 220,
               ))
         ],
@@ -62,58 +79,15 @@ class DrinksMorePage extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Row(
-                children: [
-                  Image.asset(
-                    'assets/icons/ic_add.png',
-                    height: 20,
-                    width: 20,
-                  ),
-                  const SizedBox(width: 4),
-                  Text(
-                    '20 мин',
-                    style: const TextStyle(
-                        color: Color(0xff52616B), fontWeight: FontWeight.w600),
-                  ),
-                ],
-              ),
-              Row(
-                children: [
-                  Image.asset(
-                    'assets/icons/ic_add.png',
-                    height: 20,
-                    width: 20,
-                  ),
-                  const SizedBox(width: 4),
-                  Text(
-                    '5 инг',
-                    style: TextStyle(
-                        color: Color(0xff52616B), fontWeight: FontWeight.w600),
-                  ),
-                ],
-              ),
-              Row(
-                children: [
-                  Image.asset(
-                    'assets/icons/ic_add.png',
-                    height: 20,
-                    width: 20,
-                  ),
-                  const SizedBox(width: 4),
-                  Text(
-                    '438 кал',
-                    style: TextStyle(
-                        color: Color(0xff52616B), fontWeight: FontWeight.w600),
-                  ),
-                ],
-              ),
             ],
           ),
           const SizedBox(height: 16),
-          Text(
-            Drink.drinks[0].name!,
-            style: const TextStyle(fontSize: 16, height: 1.4),
-            textAlign: TextAlign.left,
+          Expanded(
+            child: Text(
+              Drink.drinks[0].fastFoodMore!,
+              style: const TextStyle(fontSize: 16, height: 1.4),
+              textAlign: TextAlign.left,
+            ),
           )
         ],
       ),

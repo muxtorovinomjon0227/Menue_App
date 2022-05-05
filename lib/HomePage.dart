@@ -6,6 +6,7 @@ import 'package:menue_app/pages/DrincPage/drinc_page.dart';
 import 'package:menue_app/pages/FastFoodPages/fast_food_page.dart';
 import 'package:menue_app/pages/BlyudaPage/blyuda_page.dart';
 import 'package:menue_app/pages/SalatPage/salat_page.dart';
+import 'package:menue_app/pages/call/call_page.dart';
 
 class HomeWidget extends StatefulWidget {
   HomeWidget({Key? key}) : super(key: key);
@@ -15,6 +16,7 @@ class HomeWidget extends StatefulWidget {
 }
 
 class _HomeWidgetState extends State<HomeWidget> {
+
 
 
   @override
@@ -92,7 +94,18 @@ class _HomeWidgetState extends State<HomeWidget> {
                         labelType: NavigationRailLabelType.all,
                         leading: Padding(
                           padding: const EdgeInsets.only(top: 100),
-                          child: langInit(),
+                          child: Column(
+                            children: [
+                              langInit(),
+                              IconButton(onPressed: (){}, icon: Image.asset("assets/icons/heart.png",height: 25,width: 25,color: Colors.white,)),
+                              IconButton(onPressed: (){
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) =>  const CallPage()),
+                                );
+                              }, icon: Icon(Icons.call,color: Colors.blue,)),
+                            ],
+                          ),
                         ),
                         destinations:  [
                            NavigationRailDestination(

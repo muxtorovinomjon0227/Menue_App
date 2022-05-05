@@ -12,7 +12,7 @@
     @override
     Widget build(BuildContext context) {
       return Container(
-        margin: const EdgeInsets.only(top: 80, right: 40,left: 55),
+        margin: const EdgeInsets.only(top: 80, right: 40,left: 50),
         color: Color(Salad.salads[selectedItemIndex].bannerColor!.toInt()),
         child: Stack(
           clipBehavior: Clip.none,
