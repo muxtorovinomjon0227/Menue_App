@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:menue_app/models/salads_model.dart';
 
 import '../../models/drinks_model.dart';
-import '../../models/food_models.dart';
+
 
 
 class DrinksMorePage extends StatelessWidget {
@@ -13,7 +13,7 @@ class DrinksMorePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(top: 80, right: 35,left: 50),
+      margin: const EdgeInsets.only(top: 80, right: 40,left: 50),
       color: Color(Drink.drinks[selectedItemIndex].bannerColor!.toInt()),
       child: Stack(
         clipBehavior: Clip.none,
@@ -53,7 +53,7 @@ class DrinksMorePage extends StatelessWidget {
               top: -72,
               right: -48,
               child: Image.asset(
-                Salad.salads[selectedItemIndex].imageUrl!,
+                Drink.drinks[selectedItemIndex].imageUrl!,
                 height: 220,
               ))
         ],
@@ -74,12 +74,6 @@ class DrinksMorePage extends StatelessWidget {
               fontSize: 26,
               fontWeight: FontWeight.w700,
             ),
-          ),
-          const SizedBox(height: 16),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-            ],
           ),
           const SizedBox(height: 16),
           Expanded(

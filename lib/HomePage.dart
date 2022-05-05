@@ -37,7 +37,7 @@ class _HomeWidgetState extends State<HomeWidget> {
 
   var list = [
     BlyudaPage(),
-    DrinksPage(),
+    DrinkPage(),
     FastFoodPage(),
     SaladsPage(),
   ];

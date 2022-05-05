@@ -2,17 +2,21 @@ import 'dart:io';
 import 'dart:ui';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:menue_app/models/salads_model.dart';
+import 'package:menue_app/pages/SalatPage/salads_more_page.dart';
+
 import '../../models/drinks_model.dart';
+import '../../models/food_models.dart';
 import 'drinks_more_page.dart';
 
-class DrinksPage extends StatefulWidget {
-  DrinksPage({Key? key}) : super(key: key);
+class DrinkPage extends StatefulWidget {
+  DrinkPage({Key? key}) : super(key: key);
 
   @override
-  State<DrinksPage> createState() => _DrinksPageState();
+  State<DrinkPage> createState() => _DrinkPageState();
 }
 
-class _DrinksPageState extends State<DrinksPage> {
+class _DrinkPageState extends State<DrinkPage> {
   bool _isItemSelected = false;
   int _selectedItemIndex = 0;
 
@@ -43,7 +47,7 @@ class _DrinksPageState extends State<DrinksPage> {
                 children: [
                   Center(
                     child: Text(
-                      'title'.tr(),
+                      'title'. tr(),
                       style: TextStyle(fontSize: 16,color: Colors.blue),
                     ),
                   ),
@@ -89,7 +93,7 @@ class _DrinksPageState extends State<DrinksPage> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SizedBox(height: 120),
+                    SizedBox(height: 48),
                     Row(
                       children: [
                         Container(
@@ -101,10 +105,20 @@ class _DrinksPageState extends State<DrinksPage> {
                         Text(drinks.name.toString()),
                       ],
                     ),
-                    const SizedBox(height: 1),
+                    const SizedBox(height: 16),
+                    SizedBox(
+                      height: 90,
+                      child: Text(
+                        drinks.name!,
+                        maxLines: 3,
+                        style: const TextStyle(
+                            height: 1.3,
+                            fontSize: 24,
+                            color: Color(0xff1E2022),
+                            fontWeight: FontWeight.w700),
+                      ),
+                    ),
                     SizedBox(height: 16),
-                    Text(drinks.countName.toString(),style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold)),
-                    SizedBox(height: 12),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -121,6 +135,12 @@ class _DrinksPageState extends State<DrinksPage> {
                               color: Color(0xff52616B),
                               fontWeight: FontWeight.w600),
                         ),
+                      ],
+                    ),
+                    SizedBox(height: 12),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
                       ],
                     ),
                     SizedBox(height: 16),
@@ -163,20 +183,16 @@ class _DrinksPageState extends State<DrinksPage> {
                 ),
               )),
         ),
-        Column(
-          children: [
-            Positioned(
-              top: -15,
-              right:  15,
-              child: CircleAvatar(radius: (70),
-                  backgroundColor: Colors.white,
-                  child: ClipRRect(
-                    borderRadius:BorderRadius.circular(50),
-                    child: Image.asset(drinks.imageUrl.toString()),
-                  )
-              ),
-            ),
-          ],
+        Positioned(
+          top: -20,
+          right: -1,
+          child: CircleAvatar(radius: (80),
+              backgroundColor: Colors.white,
+              child: ClipRRect(
+                borderRadius:BorderRadius.circular(80),
+                child: Image.asset(drinks.imageUrl.toString()),
+              )
+          ),
         ),
       ],
     );
