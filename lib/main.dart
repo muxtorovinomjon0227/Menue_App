@@ -10,7 +10,7 @@ void main() async {
   await EasyLocalization.ensureInitialized();
 
   runApp(EasyLocalization(child: MyApp(),
-    supportedLocales: [
+    supportedLocales: const [
       Locale('en', "US"),
       Locale('ru', 'RU'),
       Locale('uz', 'UZ'),

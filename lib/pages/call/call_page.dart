@@ -14,7 +14,7 @@ class _CallPageState extends State<CallPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body:Container(
-          decoration:  BoxDecoration(
+          decoration:  const BoxDecoration(
               image:  DecorationImage(
                 image: AssetImage("assets/images/call_senter.png"),
                 fit: BoxFit.contain,
@@ -26,21 +26,18 @@ class _CallPageState extends State<CallPage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.start,
           children:  [
-            SizedBox(height: 100),
-            const Padding(
-              padding: EdgeInsets.only(left: 50),
-              child: Text("Assalomu alaykum! \n"
-                  "Bizning restuarantimizga \n"
-                  "xush kelipsiz\n"
-                  "pastdagi nomerga qo'ng'iroq \n"
-                  "qib siz o'zingizga yoqqan taomni \n"
-                  "buyirtma qlishingiz mumkin\n"
-                  "Biznig xizmatlarni\n"
-                  "maqqullaganingiz uchun"
-                  "sizdan judaham minnadormiz!",style: TextStyle(fontSize: 20,color: Colors.black)),
-            ),
-            SizedBox(height: 50),
-            Text("+998990665408",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.blue),),
+            const SizedBox(height: 100),
+            const Text("Assalomu alaykum! \n"
+                "Bizning restuarantimizga \n"
+                "xush kelipsiz!\n"
+                "Pastdagi nomerga qo'ng'iroq \n"
+                "qlib siz o'zingizga yoqgan taomni \n"
+                "buyirtma qlishingiz mumkin\n"
+                "Biznig xizmatlarni\n"
+                "maqqullaganingiz uchun"
+                "sizdan judaham minnatdormiz!",style: TextStyle(fontSize: 20,color: Colors.black, ),textAlign: TextAlign.center),
+            const SizedBox(height: 350),
+            const Text("+998990665408",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.blue),),
             buildButton(),
           ],
         ),
@@ -49,11 +46,11 @@ class _CallPageState extends State<CallPage> {
   }
 
   Widget buildButton(){
-    final number = "+998990665408";
+    const number = "+998990665408";
     return ElevatedButton(onPressed: () async {
       launch("tel://$number");
       await FlutterPhoneDirectCaller.callNumber(number);
-    }, child: Text("Call"),);
+    }, child: const Text("   Call   "));
   }
 }
 // gradient: LinearGradient(
