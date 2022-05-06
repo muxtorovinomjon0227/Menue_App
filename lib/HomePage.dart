@@ -97,7 +97,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                           child: Column(
                             children: [
                               langInit(),
-                              IconButton(onPressed: (){}, icon: Image.asset("assets/icons/heart.png",height: 25,width: 25,color: Colors.white,)),
+                              // IconButton(onPressed: (){}, icon: Image.asset("assets/icons/heart.png",height: 25,width: 25,color: Colors.white,)),
                               IconButton(onPressed: (){
                                 Navigator.push(
                                   context,

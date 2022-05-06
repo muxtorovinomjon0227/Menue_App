@@ -17,18 +17,42 @@ samples, guidance on mobile development, and a full API reference.
 "# Menue_App" 
 "# Menue_App" 
 <p align="left">
-  <img src="assets/img.png" alt="SR GUI Opening window"
+  <img src="assets/screen_1.png" alt="SR GUI Opening window"
        width="300">
 </p>
 <p align="left">
-  <img src="assets/img_1.png" alt="SR GUI Opening window"
+  <img src="assets/screen_2.png" alt="SR GUI Opening window"
        width="300">
 </p>
 <p align="left">
-  <img src="assets/img_2.png" alt="SR GUI Opening window"
+  <img src="assets/screen_3.png" alt="SR GUI Opening window"
        width="300">
 </p>
 <p align="left">
-  <img src="assets/splash.png" alt="SR GUI Opening window"
+  <img src="assets/screen_4.png" alt="SR GUI Opening window"
+       width="300">
+</p>
+<p align="left">
+  <img src="assets/screen_5.png" alt="SR GUI Opening window"
+       width="300">
+</p>
+<p align="left">
+  <img src="assets/screen_5.png" alt="SR GUI Opening window"
+       width="300">
+</p>
+<p align="left">
+  <img src="assets/screen_6.png" alt="SR GUI Opening window"
+       width="300">
+</p>
+<p align="left">
+  <img src="assets/screen_7.png" alt="SR GUI Opening window"
+       width="300">
+</p>
+<p align="left">
+  <img src="assets/screen_8.png" alt="SR GUI Opening window"
+       width="300">
+</p>
+<p align="left">
+  <img src="assets/screen_9.png" alt="SR GUI Opening window"
        width="300">
 </p>
