@@ -17,7 +17,7 @@ samples, guidance on mobile development, and a full API reference.
 "# Menue_App" 
 "# Menue_App" 
 <p align="left">
-  <img src="assets/screen_1.jpg" alt="SR GUI Opening window"
+  <img src="assets/screen_4.jpg" alt="SR GUI Opening window"
        width="300">
 </p>
 <p align="left">
@@ -29,7 +29,7 @@ samples, guidance on mobile development, and a full API reference.
        width="300">
 </p>
 <p align="left">
-  <img src="assets/screen_4.jpg" alt="SR GUI Opening window"
+  <img src="assets/screen_9.jpg" alt="SR GUI Opening window"
        width="300">
 </p>
 <p align="left">
@@ -53,6 +53,6 @@ samples, guidance on mobile development, and a full API reference.
        width="300">
 </p>
 <p align="left">
-  <img src="assets/screen_9.jpg" alt="SR GUI Opening window"
+  <img src="assets/screen_1.jpg" alt="SR GUI Opening window"
        width="300">
 </p>
